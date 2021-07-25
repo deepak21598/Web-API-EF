@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_a76ba2_remindme12Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DEPARTMENTMASTER">
+    <Key>
+      <PropertyRef Name="DEPT_ID" />
+    </Key>
+    <Property Name="DEPT_ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="EMPLOYEEMASTER">
+    <Key>
+      <PropertyRef Name="EMP_ID" />
+    </Key>
+    <Property Name="EMP_ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="30" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="30" />
+    <Property Name="DOJ" Type="date" />
+    <Property Name="DEPARTMENTID" Type="nvarchar" MaxLength="10" />
+    <Property Name="PASSWORD" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="PROJECTEMPLOYEELINKING">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="PROJECTID" Type="nvarchar" MaxLength="10" />
+    <Property Name="EMPLOYEEID" Type="nvarchar" MaxLength="10" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PROJECTMASTER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="30" />
+    <Property Name="PROJECTMGR" Type="nvarchar" MaxLength="10" />
+    <Property Name="STARTDATE" Type="date" />
+    <Property Name="ENDATE" Type="date" />
+  </EntityType>
+  <EntityContainer Name="db_a76ba2_remindme12ModelStoreContainer">
+    <EntitySet Name="DEPARTMENTMASTER" EntityType="Self.DEPARTMENTMASTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPLOYEEMASTER" EntityType="Self.EMPLOYEEMASTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROJECTEMPLOYEELINKING" EntityType="Self.PROJECTEMPLOYEELINKING" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROJECTMASTER" EntityType="Self.PROJECTMASTER" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

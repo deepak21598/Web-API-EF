@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_a76ba2_remindme12ModelStoreContainer" CdmEntityContainer="db_a76ba2_remindme12Entities">
+    <EntitySetMapping Name="DEPARTMENTMASTERs">
+      <EntityTypeMapping TypeName="db_a76ba2_remindme12Model.DEPARTMENTMASTER">
+        <MappingFragment StoreEntitySet="DEPARTMENTMASTER">
+          <ScalarProperty Name="DEPT_ID" ColumnName="DEPT_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEEMASTERs">
+      <EntityTypeMapping TypeName="db_a76ba2_remindme12Model.EMPLOYEEMASTER">
+        <MappingFragment StoreEntitySet="EMPLOYEEMASTER">
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+          <ScalarProperty Name="DEPARTMENTID" ColumnName="DEPARTMENTID" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROJECTEMPLOYEELINKINGs">
+      <EntityTypeMapping TypeName="db_a76ba2_remindme12Model.PROJECTEMPLOYEELINKING">
+        <MappingFragment StoreEntitySet="PROJECTEMPLOYEELINKING">
+          <ScalarProperty Name="PROJECTID" ColumnName="PROJECTID" />
+          <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROJECTMASTERs">
+      <EntityTypeMapping TypeName="db_a76ba2_remindme12Model.PROJECTMASTER">
+        <MappingFragment StoreEntitySet="PROJECTMASTER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PROJECTMGR" ColumnName="PROJECTMGR" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDATE" ColumnName="ENDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

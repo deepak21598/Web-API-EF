@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="db_a76ba2_remindme12Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DEPARTMENTMASTER">
+          <Key>
+            <PropertyRef Name="DEPT_ID" />
+          </Key>
+          <Property Name="DEPT_ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="EMPLOYEEMASTER">
+          <Key>
+            <PropertyRef Name="EMP_ID" />
+          </Key>
+          <Property Name="EMP_ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="30" />
+          <Property Name="DOJ" Type="date" />
+          <Property Name="DEPARTMENTID" Type="nvarchar" MaxLength="10" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="PROJECTEMPLOYEELINKING">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="PROJECTID" Type="nvarchar" MaxLength="10" />
+          <Property Name="EMPLOYEEID" Type="nvarchar" MaxLength="10" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PROJECTMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="PROJECTMGR" Type="nvarchar" MaxLength="10" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDATE" Type="date" />
+        </EntityType>
+        <EntityContainer Name="db_a76ba2_remindme12ModelStoreContainer">
+          <EntitySet Name="DEPARTMENTMASTER" EntityType="Self.DEPARTMENTMASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMPLOYEEMASTER" EntityType="Self.EMPLOYEEMASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROJECTEMPLOYEELINKING" EntityType="Self.PROJECTEMPLOYEELINKING" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROJECTMASTER" EntityType="Self.PROJECTMASTER" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_a76ba2_remindme12Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DEPARTMENTMASTER">
+          <Key>
+            <PropertyRef Name="DEPT_ID" />
+          </Key>
+          <Property Name="DEPT_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EMPLOYEEMASTER">
+          <Key>
+            <PropertyRef Name="EMP_ID" />
+          </Key>
+          <Property Name="EMP_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DOJ" Type="DateTime" Precision="0" />
+          <Property Name="DEPARTMENTID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PROJECTEMPLOYEELINKING">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="PROJECTID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EMPLOYEEID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="PROJECTMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PROJECTMGR" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="db_a76ba2_remindme12Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DEPARTMENTMASTERs" EntityType="Self.DEPARTMENTMASTER" />
+          <EntitySet Name="EMPLOYEEMASTERs" EntityType="Self.EMPLOYEEMASTER" />
+          <EntitySet Name="PROJECTEMPLOYEELINKINGs" EntityType="Self.PROJECTEMPLOYEELINKING" />
+          <EntitySet Name="PROJECTMASTERs" EntityType="Self.PROJECTMASTER" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_a76ba2_remindme12ModelStoreContainer" CdmEntityContainer="db_a76ba2_remindme12Entities">
+          <EntitySetMapping Name="DEPARTMENTMASTERs">
+            <EntityTypeMapping TypeName="db_a76ba2_remindme12Model.DEPARTMENTMASTER">
+              <MappingFragment StoreEntitySet="DEPARTMENTMASTER">
+                <ScalarProperty Name="DEPT_ID" ColumnName="DEPT_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPLOYEEMASTERs">
+            <EntityTypeMapping TypeName="db_a76ba2_remindme12Model.EMPLOYEEMASTER">
+              <MappingFragment StoreEntitySet="EMPLOYEEMASTER">
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+                <ScalarProperty Name="DEPARTMENTID" ColumnName="DEPARTMENTID" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROJECTEMPLOYEELINKINGs">
+            <EntityTypeMapping TypeName="db_a76ba2_remindme12Model.PROJECTEMPLOYEELINKING">
+              <MappingFragment StoreEntitySet="PROJECTEMPLOYEELINKING">
+                <ScalarProperty Name="PROJECTID" ColumnName="PROJECTID" />
+                <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROJECTMASTERs">
+            <EntityTypeMapping TypeName="db_a76ba2_remindme12Model.PROJECTMASTER">
+              <MappingFragment StoreEntitySet="PROJECTMASTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="PROJECTMGR" ColumnName="PROJECTMGR" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDATE" ColumnName="ENDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

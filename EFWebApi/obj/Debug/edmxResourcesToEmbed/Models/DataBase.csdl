@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_a76ba2_remindme12Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DEPARTMENTMASTER">
+    <Key>
+      <PropertyRef Name="DEPT_ID" />
+    </Key>
+    <Property Name="DEPT_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EMPLOYEEMASTER">
+    <Key>
+      <PropertyRef Name="EMP_ID" />
+    </Key>
+    <Property Name="EMP_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DOJ" Type="DateTime" Precision="0" />
+    <Property Name="DEPARTMENTID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PROJECTEMPLOYEELINKING">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="PROJECTID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="EMPLOYEEID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="PROJECTMASTER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="PROJECTMGR" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+    <Property Name="ENDATE" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="db_a76ba2_remindme12Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DEPARTMENTMASTERs" EntityType="Self.DEPARTMENTMASTER" />
+    <EntitySet Name="EMPLOYEEMASTERs" EntityType="Self.EMPLOYEEMASTER" />
+    <EntitySet Name="PROJECTEMPLOYEELINKINGs" EntityType="Self.PROJECTEMPLOYEELINKING" />
+    <EntitySet Name="PROJECTMASTERs" EntityType="Self.PROJECTMASTER" />
+  </EntityContainer>
+</Schema>
